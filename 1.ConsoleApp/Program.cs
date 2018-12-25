@@ -11,10 +11,13 @@ namespace _1.ConsoleApp
     static void Main(string[] args)
     {
       string request;
+      string s = "";
+      s = "\n" +s.PadLeft(20, '-') + "\n";
       do
       {
         Console.WriteLine("Введите номер главы:");
         request = Console.ReadLine().ToLower();
+        Console.WriteLine(s);
         switch (request)
         {
           case "help":
@@ -27,8 +30,17 @@ namespace _1.ConsoleApp
           case "3.1.1":
             p3_1_1();
             break;
+          case "3.1.2":
+            p3_1_2();
+            break;
+          case "3.3.4":
+            p3_3_4();
+            break;
+          case "3.3.5":
+            p3_3_5();
+            break;
         }
-        Console.WriteLine();
+        Console.WriteLine(s);
       }
       while (request != "q" && request != "qout");
 
@@ -42,6 +54,9 @@ namespace _1.ConsoleApp
       Console.WriteLine("q или qout - Выход");
       Console.WriteLine("1.9.6 - Типы данных");
       Console.WriteLine("3.1.1 - Hello, world!");
+      Console.WriteLine("3.1.2 - Форматы чисел!");
+      Console.WriteLine("3.3.4 - Члены типов данных");
+      Console.WriteLine("3.3.5 - Работа со строками");
     }
 
     static void p1_9_6()
@@ -81,5 +96,36 @@ namespace _1.ConsoleApp
       Console.WriteLine("Hello? world!");
     }
 
+    static void p3_1_2()
+    {
+      Console.WriteLine("Значение 123456 в разных форматах");
+      Console.WriteLine("d7: {0:d7}", 123456);
+      Console.WriteLine("c: {0:c}", 123456);
+      Console.WriteLine("n: {0:n}", 123456);
+      Console.WriteLine("f3: {0:f3}", 123456);
     }
+
+    static void p3_3_4()
+    {
+      Console.WriteLine("TrueString {0}", bool.TrueString);
+      Console.WriteLine("FalseString {0}", bool.FalseString);
+      Console.WriteLine("char.IsDigit('1') {0}", char.IsDigit('1'));
+      Console.WriteLine("char.IsDigit('a') {0}", char.IsDigit('a'));
+    }
+
+    static void p3_3_5()
+    {
+      string h = "Hello";
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("Длина h = {0}", h.Length);
+      Console.WriteLine("h в верхнем регистре = {0}", h.ToUpper());
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h в нижнем регистре = {0}", h.ToLower());
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h содержит e? : {0}", h.Contains("e"));
+      Console.WriteLine("Замена {0}", h.Replace("lo",""));
+      Console.WriteLine("h = {0}", h);
+    }
+
+  }
 }
