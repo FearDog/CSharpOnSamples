@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_11_0();
+      p3_12_0();
 
       Console.WriteLine(s);
       do
@@ -75,6 +75,9 @@ namespace _1.ConsoleApp
           case "3110":
             p3_11_0();
             break;
+          case "3120":
+            p3_11_0();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -99,6 +102,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.9.4 - Сортировка массивов");
       Console.WriteLine("3.10.0 - Кортежи");
       Console.WriteLine("3.11.0 - Количество слов в тексте");
+      Console.WriteLine("3.12.0 - Сумма значений функции 3*X^3-2*X^2");
     }
 
     static void p1_9_6()
@@ -336,7 +340,7 @@ namespace _1.ConsoleApp
         Console.Write("\t{0}", i);
     }
 
-    static Tuple<int, float, string, char> tup (int z, string name)
+    static Tuple<int, float, string, char> tup(int z, string name)
     {
       int x = 4 + z;
       float y = (float)(Math.Sqrt(z));
@@ -361,6 +365,21 @@ namespace _1.ConsoleApp
       tArr = text.Split(' ');
       Console.WriteLine("Количество слов:");
       Console.WriteLine(tArr.Length);
+    }
+
+    static double f(int Value)
+    {
+      return 3 * Math.Pow(Value,3) - 2 * Math.Pow(Value,2);
+    }
+
+    static void p3_12_0()
+    {
+      Console.WriteLine("Введите число:");
+      int x = Convert.ToInt32(Console.ReadLine());
+      double result = 0;
+      for (int i = 1; i <= x; i++)
+        result += f(i);
+      Console.WriteLine("Результат: " + result);
     }
 
   }
