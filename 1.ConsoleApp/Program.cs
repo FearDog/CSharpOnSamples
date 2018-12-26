@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_10_0();
+      p3_11_0();
 
       Console.WriteLine(s);
       do
@@ -72,6 +72,9 @@ namespace _1.ConsoleApp
           case "3100":
             p3_10_0();
             break;
+          case "3110":
+            p3_11_0();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -94,7 +97,8 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.9.2 - Многомерные массивы");
       Console.WriteLine("3.9.3 - Ступенчатые массивы");
       Console.WriteLine("3.9.4 - Сортировка массивов");
-      Console.WriteLine("3.10.0- Кортежи");
+      Console.WriteLine("3.10.0 - Кортежи");
+      Console.WriteLine("3.11.0 - Количество слов в тексте");
     }
 
     static void p1_9_6()
@@ -345,7 +349,18 @@ namespace _1.ConsoleApp
     static void p3_10_0()
     {
       var t = tup(5, "Дима");
+      Console.WriteLine("tup(5, \"Дима\")");
       Console.WriteLine("{0} {1} {2} {3}", t.Item3, t.Item1, t.Item2, t.Item4);
+    }
+
+    static void p3_11_0()
+    {
+      Console.WriteLine("Введите текст:");
+      string[] tArr;
+      string text = Console.ReadLine();
+      tArr = text.Split(' ');
+      Console.WriteLine("Количество слов:");
+      Console.WriteLine(tArr.Length);
     }
 
   }
