@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_9_3();
+      p3_9_4();
 
       Console.WriteLine(s);
       do
@@ -66,6 +66,9 @@ namespace _1.ConsoleApp
           case "393":
             p3_9_3();
             break;
+          case "394":
+            p3_9_4();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -87,6 +90,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.9.1 - Одномерные массивы");
       Console.WriteLine("3.9.2 - Многомерные массивы");
       Console.WriteLine("3.9.3 - Ступенчатые массивы");
+      Console.WriteLine("3.9.4 - Сортировка массивов");
     }
 
     static void p1_9_6()
@@ -309,6 +313,19 @@ namespace _1.ConsoleApp
         }
         Console.WriteLine();
       }
+    }
+
+    static void p3_9_4()
+    {
+      int[] myArr = { -5, 7, -13, 121, 45, -1, 0, 77 };
+      Console.WriteLine("До сортировки: ");
+      foreach (int i in myArr)
+        Console.Write("\t{0}", i);
+
+      Array.Sort(myArr);
+      Console.WriteLine("\nПосле сортировки: ");
+      foreach (int i in myArr)
+        Console.Write("\t{0}", i);
     }
 
 
