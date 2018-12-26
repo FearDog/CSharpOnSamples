@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_9_1();
+      p3_9_3();
 
       Console.WriteLine(s);
       do
@@ -60,6 +60,12 @@ namespace _1.ConsoleApp
           case "391":
             p3_9_1();
             break;
+          case "392":
+            p3_9_2();
+            break;
+          case "393":
+            p3_9_3();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -79,6 +85,8 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.7.3 - Цикл while");
       Console.WriteLine("3.8.0 - Операторы if и switch");
       Console.WriteLine("3.9.1 - Одномерные массивы");
+      Console.WriteLine("3.9.2 - Многомерные массивы");
+      Console.WriteLine("3.9.3 - Ступенчатые массивы");
     }
 
     static void p1_9_6()
@@ -269,5 +277,40 @@ namespace _1.ConsoleApp
       for (int i = 0; i < ints.Length; i++)
         Console.WriteLine(ints[i]);
     }
+
+    static void p3_9_2()
+    {
+      int[,] RandomArr = new int[10, 6];
+      Random ran = new Random();
+      for (int i = 0; i < RandomArr.GetLength(0); i++)
+      {
+        for (int j = 0; j < RandomArr.GetLength(1); j++)
+        {
+          RandomArr[i, j] = ran.Next(1, 100);
+          Console.Write("{0}\t", RandomArr[i, j]);
+        }
+        Console.WriteLine();
+      }
+    }
+
+    static void p3_9_3()
+    {
+      int[][] myArr = new int[3][];
+      myArr[0] = new int[3];
+      myArr[1] = new int[5];
+      myArr[2] = new int[4];
+
+      for (int i = 0; i < myArr.Length; i++)
+      {
+        for (int j = 0; j < myArr[i].Length; j++)
+        {
+          myArr[i][j] = j;
+          Console.Write("{0}\t", myArr[i][j]);
+        }
+        Console.WriteLine();
+      }
+    }
+
+
   }
 }
