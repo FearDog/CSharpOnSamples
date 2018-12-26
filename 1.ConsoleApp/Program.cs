@@ -15,6 +15,7 @@ namespace _1.ConsoleApp
       s = "\n" +s.PadLeft(20, '-') + "\n";
       do
       {
+        p3_3_5();
         Console.WriteLine("Введите номер главы:");
         request = Console.ReadLine().ToLower();
         Console.WriteLine(s);
@@ -43,10 +44,6 @@ namespace _1.ConsoleApp
         Console.WriteLine(s);
       }
       while (request != "q" && request != "qout");
-
-      {
-
-      }
     }
 
     static void Help()
@@ -117,13 +114,25 @@ namespace _1.ConsoleApp
     {
       string h = "Hello";
       Console.WriteLine("h = {0}", h);
-      Console.WriteLine("Длина h = {0}", h.Length);
-      Console.WriteLine("h в верхнем регистре = {0}", h.ToUpper());
+      Console.WriteLine("h.Length = {0}", h.Length);
+      Console.WriteLine("h.Contains(\"e\") = {0}", h.Contains("e"));
+      Console.WriteLine("h.ToUpper() = {0}", h.ToUpper());
       Console.WriteLine("h = {0}", h);
-      Console.WriteLine("h в нижнем регистре = {0}", h.ToLower());
+      Console.WriteLine("h.ToLower() = {0}", h.ToLower());
       Console.WriteLine("h = {0}", h);
-      Console.WriteLine("h содержит e? : {0}", h.Contains("e"));
-      Console.WriteLine("Замена {0}", h.Replace("lo",""));
+      Console.WriteLine("h.Replace(\"lo\",\"\")", h.Replace("lo",""));
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h.Insert(3,\"*\") = {0}", h.Insert(3, "*"));
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h.Remove(3,\"*\") = {0}", h.Remove(3));
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h.PadLeft(10,'+') = {0}", h.PadLeft(10, '+'));
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h.PadRight(10,'+') = {0}", h.PadRight(10, '+'));
+      Console.WriteLine("h = {0}", h);
+      h = " Hello ";
+      Console.WriteLine("h = {0}", h);
+      Console.WriteLine("h.Trim() = {0}", h.Trim());
       Console.WriteLine("h = {0}", h);
     }
 
