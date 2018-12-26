@@ -12,12 +12,17 @@ namespace _1.ConsoleApp
     {
       string request;
       string s = "";
-      s = "\n" +s.PadLeft(20, '-') + "\n";
+      s = "\n" + s.PadLeft(20, '-') + "\n";
+
+      p3_8_0();
+
+      Console.WriteLine(s);
       do
       {
-        p3_3_5();
         Console.WriteLine("Введите номер главы:");
         request = Console.ReadLine().ToLower();
+        request = request.Replace(".", "");
+        request = request.Replace(",", "");
         Console.WriteLine(s);
         switch (request)
         {
@@ -25,20 +30,32 @@ namespace _1.ConsoleApp
           case "h":
             Help();
             break;
-          case "1.9.6":
+          case "196":
             p1_9_6();
             break;
-          case "3.1.1":
+          case "311":
             p3_1_1();
             break;
-          case "3.1.2":
+          case "312":
             p3_1_2();
             break;
-          case "3.3.4":
+          case "334":
             p3_3_4();
             break;
-          case "3.3.5":
+          case "335":
             p3_3_5();
+            break;
+          case "371":
+            p3_7_1();
+            break;
+          case "372":
+            p3_7_2();
+            break;
+          case "373":
+            p3_7_3();
+            break;
+          case "380":
+            p3_8_0();
             break;
         }
         Console.WriteLine(s);
@@ -54,6 +71,10 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.1.2 - Форматы чисел!");
       Console.WriteLine("3.3.4 - Члены типов данных");
       Console.WriteLine("3.3.5 - Работа со строками");
+      Console.WriteLine("3.7.1 - Цикл for");
+      Console.WriteLine("3.7.2 - Цикл foreach");
+      Console.WriteLine("3.7.3 - Цикл while");
+      Console.WriteLine("3.8.0 - Операторы if и switch");
     }
 
     static void p1_9_6()
@@ -120,7 +141,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("h = {0}", h);
       Console.WriteLine("h.ToLower() = {0}", h.ToLower());
       Console.WriteLine("h = {0}", h);
-      Console.WriteLine("h.Replace(\"lo\",\"\")", h.Replace("lo",""));
+      Console.WriteLine("h.Replace(\"lo\",\"\")", h.Replace("lo", ""));
       Console.WriteLine("h = {0}", h);
       Console.WriteLine("h.Insert(3,\"*\") = {0}", h.Insert(3, "*"));
       Console.WriteLine("h = {0}", h);
@@ -136,5 +157,102 @@ namespace _1.ConsoleApp
       Console.WriteLine("h = {0}", h);
     }
 
+    static void p3_7_1()
+    {
+      for (int i = 0; i < 9; i++)
+      {
+        Console.Write("{0}", i);
+      }
+    }
+
+    static void p3_7_2()
+    {
+      int[] digits = { 1, 2, 3, 4 };
+      foreach (int i in digits)
+      {
+        Console.WriteLine(i);
+      }
+    }
+
+    static void p3_7_3()
+    {
+      Console.WriteLine("while (i++ < 10)");
+      int i = 0;
+      while (i++ < 10)
+      {
+        Console.Write("{0}", i);
+      }
+
+      Console.WriteLine();
+      Console.WriteLine();
+      Console.WriteLine("while (i < 10)");
+      i = 0;
+      while (i < 10)
+      {
+        Console.Write("{0}", i);
+        i++;
+      }
+
+      Console.WriteLine();
+      Console.WriteLine();
+      Console.WriteLine("do .. while (i++ < 10)");
+      i = 1;
+      do
+      {
+        Console.Write(i);
+      }
+      while (i++ < 10);
+    }
+
+    static void p3_8_0()
+    {
+      int page = 0;
+      int price = 99;
+
+      Console.WriteLine("Введите номер страницы:");
+      page = Convert.ToInt32(Console.ReadLine());
+
+      Console.WriteLine();
+      Console.WriteLine("if");
+      Console.WriteLine();
+
+      if (page == 1)
+      {
+        Console.WriteLine("Первая страница");
+      }
+      else
+      {
+        Console.WriteLine("Страница: {0}", page);
+      }
+
+      if (page == 1 && price < 100)
+        Console.WriteLine("Дешевые продукты на первой странице");
+
+      Console.WriteLine();
+      Console.WriteLine("switch");
+      Console.WriteLine();
+
+      switch (page)
+      {
+        case 1:
+          Console.WriteLine("Первая страница");
+          break;
+        case 2:
+          Console.WriteLine("Вторая страница");
+          break;
+        case 3:
+          Console.WriteLine("Третья страница");
+          break;
+        case 4:
+          Console.WriteLine("Четвертая страница");
+          break;
+        case 5:
+          Console.WriteLine("Пятая страница");
+          break;
+        default:
+          Console.WriteLine("Страница: {0}", page);
+          break;
+      }
+    }
   }
 }
