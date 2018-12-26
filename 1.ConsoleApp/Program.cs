@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_9_4();
+      p3_10_0();
 
       Console.WriteLine(s);
       do
@@ -69,6 +69,9 @@ namespace _1.ConsoleApp
           case "394":
             p3_9_4();
             break;
+          case "3100":
+            p3_10_0();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -91,6 +94,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.9.2 - Многомерные массивы");
       Console.WriteLine("3.9.3 - Ступенчатые массивы");
       Console.WriteLine("3.9.4 - Сортировка массивов");
+      Console.WriteLine("3.10.0- Кортежи");
     }
 
     static void p1_9_6()
@@ -328,6 +332,21 @@ namespace _1.ConsoleApp
         Console.Write("\t{0}", i);
     }
 
+    static Tuple<int, float, string, char> tup (int z, string name)
+    {
+      int x = 4 + z;
+      float y = (float)(Math.Sqrt(z));
+      string s = "Привет, " + name;
+      char ch = (char)(name[0]);
+
+      return Tuple.Create<int, float, string, char>(x, y, s, ch);
+    }
+
+    static void p3_10_0()
+    {
+      var t = tup(5, "Дима");
+      Console.WriteLine("{0} {1} {2} {3}", t.Item3, t.Item1, t.Item2, t.Item4);
+    }
 
   }
 }
