@@ -13,8 +13,8 @@ namespace _1.ConsoleApp
       string request;
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
-
-      p3_12_0();
+      
+        p3_13_0();
 
       Console.WriteLine(s);
       do
@@ -76,7 +76,10 @@ namespace _1.ConsoleApp
             p3_11_0();
             break;
           case "3120":
-            p3_11_0();
+            p3_12_0();
+            break;
+          case "3130":
+            p3_13_0();
             break;
         }
         Console.WriteLine(s);
@@ -103,6 +106,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.10.0 - Кортежи");
       Console.WriteLine("3.11.0 - Количество слов в тексте");
       Console.WriteLine("3.12.0 - Сумма значений функции 3*X^3-2*X^2");
+      Console.WriteLine("3.13.0 - Консольный калькулятор");
     }
 
     static void p1_9_6()
@@ -369,7 +373,7 @@ namespace _1.ConsoleApp
 
     static double f(int Value)
     {
-      return 3 * Math.Pow(Value,3) - 2 * Math.Pow(Value,2);
+      return 3 * Math.Pow(Value, 3) - 2 * Math.Pow(Value, 2);
     }
 
     static void p3_12_0()
@@ -380,6 +384,88 @@ namespace _1.ConsoleApp
       for (int i = 1; i <= x; i++)
         result += f(i);
       Console.WriteLine("Результат: " + result);
+    }
+
+    static void p3_13_0()
+    {
+      Console.WriteLine("Введите первое число:");
+      double x = Convert.ToDouble(Console.ReadLine());
+
+      Console.WriteLine("Введите оператор:");
+      string s = Console.ReadLine();
+
+      Console.WriteLine("Введите второе число:");
+      double y = Convert.ToDouble(Console.ReadLine());
+
+      switch (s)
+      {
+        case "+":
+          Console.WriteLine("Результат: {0}", x + y);
+          break;
+        case "-":
+          Console.WriteLine("Результат: {0}", x - y);
+          break;
+        case "*":
+          Console.WriteLine("Результат: {0}", x * y);
+          break;
+        case "/":
+          if (y == 0)
+            Console.WriteLine("На ноль делить нельзя");
+          else
+            Console.WriteLine("Результат: {0}", x / y);
+          break;
+        default:
+          Console.WriteLine("Неизвестный оператор");
+          break;
+      }
+    }
+
+    static void p3_13_0b()
+    {
+      Console.OutputEncoding = Encoding.GetEncoding(866);
+      Console.InputEncoding = Encoding.GetEncoding(866);
+      double a;
+      double b;
+      double res = 0;
+      char oper;
+
+      Console.Write("Введите первое число:");
+      a = Convert.ToDouble(Console.ReadLine());
+
+      Console.Write("\nВведите оператор:");
+      oper = Convert.ToChar(Console.ReadLine());
+
+      Console.Write("\nВведите второе число:");
+      b = Convert.ToDouble(Console.ReadLine());
+
+      if (oper == '+')
+      {
+        res = a + b;
+      }
+      else
+      if (oper == '-')
+      {
+        res = a - b;
+      }
+      else
+      if (oper == '*')
+      {
+        res = a * b;
+      }
+      else
+      if (oper == '/')
+      {
+        if (b != 0)
+          res = a * b;
+        else Console.WriteLine("На ноль делить нельзя");
+      }
+      else
+      {
+        Console.WriteLine("Неизвестный оператор");
+      }
+
+      Console.WriteLine("Результат: {0}", res);
+      Console.ReadLine();
     }
 
   }
