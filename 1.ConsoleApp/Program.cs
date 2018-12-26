@@ -14,7 +14,7 @@ namespace _1.ConsoleApp
       string s = "";
       s = "\n" + s.PadLeft(20, '-') + "\n";
 
-      p3_8_0();
+      p3_9_1();
 
       Console.WriteLine(s);
       do
@@ -57,6 +57,9 @@ namespace _1.ConsoleApp
           case "380":
             p3_8_0();
             break;
+          case "391":
+            p3_9_1();
+            break;
         }
         Console.WriteLine(s);
       }
@@ -75,6 +78,7 @@ namespace _1.ConsoleApp
       Console.WriteLine("3.7.2 - Цикл foreach");
       Console.WriteLine("3.7.3 - Цикл while");
       Console.WriteLine("3.8.0 - Операторы if и switch");
+      Console.WriteLine("3.9.1 - Одномерные массивы");
     }
 
     static void p1_9_6()
@@ -253,6 +257,17 @@ namespace _1.ConsoleApp
           Console.WriteLine("Страница: {0}", page);
           break;
       }
+    }
+
+    static void p3_9_1()
+    {
+      var arr1 = new[] { 1, 2, 3 };
+      Console.WriteLine("Тип массива arr1 ( 1, 2, 3 ) - {0}", arr1.GetType());
+      Console.WriteLine();
+
+      int[] ints = { 1, 2, 3, 4, 5 };
+      for (int i = 0; i < ints.Length; i++)
+        Console.WriteLine(ints[i]);
     }
   }
 }
